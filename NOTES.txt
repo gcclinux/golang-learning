@@ -123,8 +123,6 @@
 # Go is not OOP 
 # Example: car in OOP, car with Composition
 
-
-
 ######################
 # AREK STOP AT 25
 # RICO START 34 MAPS
