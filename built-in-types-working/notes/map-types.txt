@@ -1,0 +1,49 @@
+package main
+
+import "fmt"
+
+//maps are keys and value
+//maps can not be sorted and random print out keys value.
+
+func main() {
+
+	intMap := make(map[string]int)
+	intMap["one"] = 1
+	intMap["two"] = 2
+	intMap["three"] = 3
+	intMap["four"] = 4
+	intMap["five"] = 5
+
+	// loop all key & value for the range of intMap
+	for key, value := range intMap {
+		fmt.Println(key, value)
+	}
+
+	fmt.Println("")
+	// Simply delete a key from a map
+	delete(intMap, "four")
+
+	for key, value := range intMap {
+		fmt.Println(key, value)
+	}
+	fmt.Println("")
+
+	// Chek if an elemnt exist in the map
+
+	el, ok := intMap["four"]
+	if ok {
+		fmt.Println(el, "is in intMap")
+	} else {
+		fmt.Println(el, "is NOT in intMap")
+	}
+	fmt.Println("")
+
+	// Change the value of a map index element
+
+	intMap["two"] = 8
+	for key, value := range intMap {
+		fmt.Println(key, value)
+	}
+	fmt.Println("")
+
+}
