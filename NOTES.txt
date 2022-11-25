@@ -1,4 +1,12 @@
 # GOLANG-LEARNING
+
+# Useful alias for pushing code easy on Linux or Mac
+
+alias ghpush='git add . && git commit -m "$(date)" && git branch -M main && git push -u origin main'
+
+$ Linux edit ~/.bashrc && source ~/.bashrc
+$ Mac edit ~/.zshrc && source ~/.zshrc
+
 # Install Git-bash as terminal for Windows
 # Install go from https://go.dev/dl/
 # Install Visual Studio for any platform
