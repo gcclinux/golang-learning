@@ -1,0 +1,30 @@
+package main
+
+import "fmt"
+
+// Reference types - Pointers, slices, maps, fucntions, channels
+
+func main() {
+	x := 5
+
+	myFirstPointer := &x                             // Memory address
+	fmt.Println("myFirstPointer is", myFirstPointer) // Print memory address for x
+
+	// Print out current value of x
+	fmt.Println("x is", x)
+
+	// POINTERS ARE WAY TO REASIGN THE VALUE OF A VARIABLE THROUGH IT'S MEMORY ALLOCATION
+
+	// Changing the value of x manually
+	*myFirstPointer = 10
+	fmt.Println("x is", x)
+
+	// Changing the value through a function
+	changeValueOfPoiter(&x)
+	fmt.Println("x is", x)
+
+}
+
+func changeValueOfPoiter(number *int) {
+	*number = 15
+}

@@ -1,0 +1,50 @@
+package main
+
+import "log"
+
+// Build the struct outside of the main()
+type Car struct {
+	NumberOfTyires int
+	Luxury         bool
+	BucketSeats    bool
+	Make           string
+	Model          string
+	Year           int
+}
+
+func main() {
+
+	//String array
+	var myStrings [3]string
+	myStrings[0] = "cat"
+	myStrings[1] = "dog"
+	myStrings[2] = "fish"
+	log.Println("First element in the array is:", myStrings[0])
+
+	// Int array
+	var myIntArray [3]int
+	myIntArray[0] = 1
+	myIntArray[1] = 5
+	myIntArray[2] = 7
+	log.Println("Second Int element in the array is:", myIntArray[1])
+
+	// Build the STRUCT outside of the main()
+	var myCar Car
+	myCar.NumberOfTyires = 4
+	myCar.Luxury = true
+	myCar.Make = "Lexus"
+	myCar.Year = 2017
+	log.Println("My car is a", myCar.Year, myCar.Luxury, "Luxury", myCar.Make)
+
+	// Assign all value in the array
+	myFCar := Car{
+		NumberOfTyires: 4,
+		Luxury:         true,
+		BucketSeats:    false,
+		Make:           "Lexus",
+		Model:          "NX300h",
+		Year:           2017,
+	}
+	log.Printf("My car is a %d %s %s\n", myFCar.Year, myFCar.Make, myFCar.Model)
+
+}

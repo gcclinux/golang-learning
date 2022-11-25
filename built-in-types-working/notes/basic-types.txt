@@ -1,0 +1,39 @@
+package main
+
+import "log"
+
+//# Basic types - numbers, strings, booleans
+
+var myInt int
+var myUint uint // only holds positive values or "zero"
+var myFloat float32
+var myFloat64 float64
+
+//# Aggredate types - arrays, structs
+
+
+//# Reference types - Pointers, slices, maps, fucntions, channels
+//# Interface type
+
+
+
+func main() {
+
+	// Basic types
+	myInt = 10
+	myUint = 20
+	myFloat = 10.1
+	myFloat64 = 100.1
+
+	log.Println("-> ",myInt, myUint, myFloat, myFloat64)
+
+	myString := "Ricardo"
+	log.Println("-> ",myString)
+
+	var myBool = true
+	myBool = false
+
+	log.Println("-> ",myBool)
+
+	// Aggregate Types
+}

@@ -1,0 +1,100 @@
+package main
+
+import (
+	"fmt"
+	"sort"
+)
+
+// Reference types - Pointers, slices, maps, fucntions, channels
+
+//SLICES = String array
+
+func main() {
+
+	var animals []string
+	animals = append(animals, "dog")
+	animals = append(animals, "fish")
+	animals = append(animals, "cat")
+	animals = append(animals, "horse")
+	animals = append(animals, "Elephant")
+	animals = append(animals, "Lion")
+	animals = append(animals, "Mouse")
+
+	// You can print all elements through look and and hide the key by replacing with _
+	for _, x := range animals {
+		fmt.Println(x)
+	}
+	fmt.Println("") // New line
+
+	// You can print all elements through look and show the key
+	for i, x := range animals {
+		fmt.Println(i, x)
+	}
+	fmt.Println("") // New line
+
+	// You can print or access a specific element
+	fmt.Println("Element 0 is", animals[0])
+	fmt.Println("") // New line
+
+	// You can access or print 2 or more elements from 0 to 2
+	fmt.Println("Element 1+2 is", animals[0:2])
+	fmt.Println("") // New line
+
+	// You can see how long a slice is
+	fmt.Println("The slices is", len(animals), "elements long")
+	fmt.Println("") // New line
+
+	// You can check if the slice is sorted
+	fmt.Println("Is it sorted?", sort.StringsAreSorted(animals))
+	fmt.Println("") // New line
+
+	// You can sort the slice before printing it.
+	sort.Strings(animals)
+	fmt.Println("") // New line
+
+	// You can check if the slice is sorted
+	fmt.Println("Is it sorted?", sort.StringsAreSorted(animals))
+	fmt.Println("") // New line
+
+	// Simply print the array that has been sorted
+	fmt.Println(animals)
+	fmt.Println("") // New line
+
+	// Delete entry 1 from the slice through the function
+	animals = DeleteFromSlice(animals, 2)
+	fmt.Println("Deleted index 2 = CAT") // New line
+	fmt.Println(animals)
+	fmt.Println("") // New line
+
+	// ONLINE METHOD
+	var delete int = 3
+	elem := animals[delete]
+	// Using append function to combine two slices
+	// first slice is the slice of all the elements before the given index
+	// second slice is the slice of all the elements after the given index
+	// append function appends the second slice to the end of the first slice
+	// returning a slice, so we store it in the form of a slice
+	animals = append(animals[:delete], animals[delete+1:]...)
+
+	fmt.Printf("Second form the element %s was deleted.\n", elem)
+	fmt.Println("Slice after deleting elements:", delete)
+	fmt.Println(animals)
+	fmt.Println("") // New line
+}
+
+// Delete an element from a slice
+func DeleteFromSlice(a []string, i int) []string {
+
+	a[i] = a[len(a)-1]  //Copies last element in array, saves it at index (i-1)
+	fmt.Println(a)      //array [dog Mouse cat Horse Elephant Lion Mouse] Fish now replaced with Mouse
+	fmt.Println(len(a)) //Output is 7 as 7 elements in array
+	fmt.Println(a[i])   //Output is Mouse as it is the last elemetn in array (index 6 {7-1})
+
+	a[len(a)-1] = ""    //Sets the last element (Lion) to blank
+	fmt.Println(len(a)) //Still 7 elements in array
+
+	a = a[:len(a)-1]    //Deletes last element in the array, reduces the index by 1 (len(a)-1)
+	fmt.Println(len(a)) //Array elements is now 6
+	
+	return a
+}
