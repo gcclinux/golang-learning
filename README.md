@@ -29,5 +29,3 @@ To view godoc initial webserver<br>
 	$ godoc --http=:6060<br>
 Open favour browser browser and open URL<br>
 	http://localhost:6060<br>
-Very first line in all GO files start with package<br>
-	package main<br>
