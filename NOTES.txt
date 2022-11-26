@@ -133,5 +133,5 @@ $ Mac edit ~/.zshrc && source ~/.zshrc
 
 ######################
 # AREK STOP AT 25
-# RICO START 35 Functions
+# RICO START 36 Channels
 ######################
