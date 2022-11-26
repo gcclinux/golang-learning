@@ -1,0 +1,80 @@
+package main
+
+import "fmt"
+
+/*
+So that is a very useful feature available to us in go
+to actually use the receiver on a function
+to link a function to a type.
+*/
+type Animal struct {
+	Name  string
+	Sound string
+	Legs  int
+}
+
+// receiver function that will be a pointer to Animal
+func (a *Animal) Says() {
+	fmt.Printf("My %s says %s", a.Name, a.Sound)
+}
+
+// Add as many functions as required or wanted example separate one for legs
+func (a *Animal) NumberOfLegs() {
+	fmt.Printf("%s Has a total of %d legs!", a.Name, a.Legs)
+}
+
+func main() {
+
+	z := addTwoNumber(2, 4)
+	fmt.Println(z)
+
+	y := addAnotherTwoNumber(2, 4)
+	fmt.Println(y)
+
+	// Calculate as many number as you wish
+	myTotal := sumMany(2, 3, 4, 6, 8, 10, 88, -7, -90)
+	fmt.Println(myTotal)
+
+	// Initialise aggredgate struct Animal + add value
+	var dog Animal
+	dog.Name = "Milo"
+	dog.Sound = "Woof"
+	dog.Legs = 4
+	dog.Says()
+	fmt.Println()
+	dog.NumberOfLegs()
+	fmt.Println()
+
+	// Alternative way to initiate struct Animal
+	cat := Animal{
+		Name:  "Felix",
+		Sound: "meow",
+		Legs:  4,
+	}
+
+	cat.Says()
+	fmt.Println()
+	cat.NumberOfLegs()
+}
+
+// Example one most popular
+func addTwoNumber(x, y int) int {
+	return x + y
+}
+
+// Example two the naked return only use for short functions as it's harder to read it
+func addAnotherTwoNumber(x, y int) (sum int) {
+	sum = x + y
+	return
+}
+
+// that's a variadic function.
+// new functions - 3 dots = unknown number of int(s) 1-many
+// Add al int(s) together inrespect to the number of integers passed.
+func sumMany(nums ...int) int {
+	total := 0
+	for _, x := range nums {
+		total = total + x
+	}
+	return total
+}
