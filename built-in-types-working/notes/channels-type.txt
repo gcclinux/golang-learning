@@ -1,0 +1,87 @@
+package main
+
+import (
+	"fmt"
+
+	"github.com/eiannone/keyboard"
+)
+
+/* Channels are unic to GO, they are means to send infomartion from one place to another.
+Channels are a means of allowing your program to send information from one place to another,
+kind of like you send parameters to a function.
+But the difference is that channels are almost exclusively used for something called GO routines
+*/
+
+// CHannel can only pass single type
+var keyPressChan chan rune
+
+func main() {
+
+	/*
+		// Part of the first example
+		//Call a function as a GO routing running in paralel with the main function / runs in the backgroup
+		go doSomething("Hello, world!")
+		fmt.Println("Another message")
+		for {
+			// forever loop
+		}
+	*/
+
+	keyPressChan = make(chan rune)
+
+	// Running in the backgorund listening for key pressed
+	go listenForKeyPress()
+
+	// initial message
+	fmt.Println("Press any key, or q to quit")
+
+	// Open keyboard
+	_ = keyboard.Open()
+	defer func() {
+		keyboard.Close()
+	}()
+
+	// for loop that runs forever and capture any keys being pressed and then send it from char to keyPressChan
+	for {
+
+		char, _, _ := keyboard.GetKey()
+		if char == 'q' || char == 'Q' {
+			break
+		}
+		// Channel will be sending data to the channel everytime a key is pressed
+		keyPressChan <- char
+	}
+}
+
+/*
+func doSomething (s string ) {
+	// Part of the first example
+	until := 0
+	for {
+		fmt.Println("S is", s)
+		until = until +1
+		if until >= 5{
+			break
+		}
+	}
+}
+*/
+
+func listenForKeyPress() {
+
+	// infinit look waiting to recieve any key pressed from keyPressChan and print it out.
+	for {
+		key := <-keyPressChan
+		fmt.Println("You prssed", string(key))
+	}
+
+}
+
+/*
+
+Now channels are incredibly useful.
+And as I said they're mainly used to communicate between go routines to pass data from one part of your program
+to another part of your program that's running in the background as a go routine. So it's running on its own
+and it just cheerfully listens to channels until it receives some kind of information.
+
+*/
