@@ -49,7 +49,7 @@ func main() {
 			break
 		}
 		// Channel will be sending data to the channel everytime a key is pressed
-		keyPressChan <- char
+		keyPressChan <- char // SEND TO CHANNEL
 	}
 }
 
@@ -71,7 +71,7 @@ func listenForKeyPress() {
 
 	// infinit look waiting to recieve any key pressed from keyPressChan and print it out.
 	for {
-		key := <-keyPressChan
+		key := <-keyPressChan // RECEIVE FROM CHANNEL
 		fmt.Println("You prssed", string(key))
 	}
 
