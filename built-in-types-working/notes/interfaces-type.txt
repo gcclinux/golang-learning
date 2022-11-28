@@ -1,0 +1,72 @@
+package main
+
+import "fmt"
+
+// An interface removed the requirement of having multiple Riddle functions
+// instead passing interface references for Dog & Cat
+
+// New interface is like creating a struct but now an interface between the 2 structs
+type Animal interface {
+	Says() string
+	HowManyLegs() int
+}
+
+type Dog struct {
+	Name      string
+	Sound     string
+	NumOfLegs int
+}
+
+// Access by interface for sound & NumOfLegs for the Dog
+func (d *Dog) Says() string {
+	return d.Sound
+}
+func (d *Dog) HowManyLegs() int {
+	return d.NumOfLegs
+}
+
+type Cat struct {
+	Name      string
+	Sound     string
+	NumOfLegs int
+	HasTail   bool
+}
+
+// Access by interface for sound & NumOfLegs for the Cat
+func (d *Cat) Says() string {
+	return d.Sound
+}
+func (d *Cat) HowManyLegs() int {
+	return d.NumOfLegs
+}
+
+func main() {
+	// generate a simple riddle and print to screen
+	dog := Dog{
+		Name:      "Milo",
+		Sound:     "Woof",
+		NumOfLegs: 4,
+	}
+
+	Riddle(&dog)
+
+	var cat Cat
+	cat.Name = "Felix"
+	cat.NumOfLegs = 4
+	cat.Sound = "meow"
+	cat.HasTail = false
+
+	Riddle(&cat)
+}
+
+/* Without interface access struct directly
+func Riddle(d Dog) {
+	riddle := fmt.Sprintf("This animal say %s and has %d legs. What animal is it?", d.Sound, d.NumOfLegs)
+	fmt.Println(riddle)
+}
+*/
+// Using Animal interface
+func Riddle(a Animal) {
+	riddle := fmt.Sprintf("This animal say %s and has %d legs. What animal is it?", a.Says(), a.HowManyLegs())
+	fmt.Println(riddle)
+}
