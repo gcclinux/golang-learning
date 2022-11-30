@@ -133,5 +133,5 @@ $ Mac edit ~/.zshrc && source ~/.zshrc
 
 ######################
 # AREK STOP AT 25
-# RICO START 38 Expressions
+# RICO START 39 Booleans
 ######################

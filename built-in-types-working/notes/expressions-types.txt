@@ -1,0 +1,30 @@
+import "fmt"
+
+//Expressions
+// And an expression is nothing more than a value that can be evaluated to a single value.
+
+func main() {
+
+	age := 10           // Interger literal of 10
+	name := "Rico"      // String literal of Rico
+	rightHanded := true // Boolean literal of true
+
+	rightHanded = false
+
+	// in the print statement name, age, rightHanded is an expression because these are evaluated to a single value at runtime.
+	fmt.Printf("%s is %d years old. Right handed: %t\n", name, age, rightHanded)
+
+	// is assigned the value of age plus 10. Well, this, this part right here age plus 10,
+	// that's an expression because that can be evaluated to a single value.
+
+	ageInTenYears := age + 10
+	fmt.Printf("In ten years, %s will be %d years old\n", name, ageInTenYears)
+
+	// Another perfect value expression
+
+	isATeenager := age >= 13
+	fmt.Println(name, "is a teenager:", isATeenager)
+
+	//Expressions are nothing more than some bit of code that can be evaluated to a single value
+
+}
