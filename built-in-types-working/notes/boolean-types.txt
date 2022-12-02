@@ -1,0 +1,28 @@
+package main
+
+import "fmt"
+
+// Boolean logic
+
+func main() {
+
+	apples := 18
+	oranges := 9
+
+	// boolean expression test
+	fmt.Println(apples == oranges)
+	fmt.Println(apples != oranges)
+
+	// boolean possibiliies
+	// >
+	// <
+	// >=
+	// <=
+	fmt.Printf("%d > %d: %t\n", apples, oranges, apples > oranges)
+	fmt.Printf("%d < %d: %t\n", apples, oranges, apples < oranges)
+	fmt.Printf("%d >= %d: %t\n", apples, oranges, apples >= oranges)
+	fmt.Printf("%d <= %d: %t\n", apples, oranges, apples <= oranges)
+
+	// Compound boolean test on next lesson
+
+}

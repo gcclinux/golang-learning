@@ -1,0 +1,67 @@
+package main
+
+import "fmt"
+
+// Compound booleans
+
+type Employee struct {
+	Name     string
+	Age      int
+	Salary   int
+	FullTime bool
+}
+
+func main() {
+
+	jack := Employee{
+		Name:     "Jack Smith",
+		Age:      27,
+		Salary:   40000,
+		FullTime: false,
+	}
+
+	jill := Employee{
+		Name:     "Jill Johns",
+		Age:      33,
+		Salary:   60000,
+		FullTime: true,
+	}
+
+	var employees []Employee
+	employees = append(employees, jack)
+	employees = append(employees, jill)
+
+	for _, x := range employees {
+		if x.Age > 30 {
+			fmt.Println(x.Name, "is 30 or older")
+		} else {
+			fmt.Println(x.Name, "is under 30")
+		}
+
+		if x.Age > 30 && x.Salary > 50000 {
+			fmt.Println(x.Name, "makes more than 50k AND is over 30 years old")
+		} else {
+			fmt.Println("Either", x.Name, "makes less than 50k OR is under 30 years old")
+		}
+
+		if x.Age > 30 || x.Salary > 50000 {
+			fmt.Println(x.Name, "makes more than 50k OR is over 30 years old")
+		} else {
+			fmt.Println(x.Name, "makes less than 50k AND is under 30 years old")
+		}
+
+		// Bad example not sure what the outcome will be
+		if x.Age > 30 || x.Salary < 50000 && x.FullTime {
+			fmt.Println(x.Name, "matches our unclear criteria")
+		}
+
+		// Fix above exmaple
+		if (x.Age > 30 || x.Salary < 50000) && x.FullTime {
+			fmt.Println(x.Name, "matches our unclear criteria")
+		}
+
+		// So the only time you use parentheses in an if statement in go to maker a decision clear and to prioritise the order of the statement
+
+	}
+
+}
