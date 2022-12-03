@@ -1,0 +1,90 @@
+package main
+
+import "fmt"
+
+//GO Composition vs OOP enheritance code
+
+
+type Vehicle struct {
+	NumberOfWheels int
+	NumberOfPassangers int
+}
+
+type Car struct {
+	Make string
+	Model string
+	Year int
+	IsElectric bool
+	IsHybrid bool
+
+	/* 
+		So what I've done is actually called composition.
+		I am building my car struct and embedding the vehicle type in it, which means that the car also has access to the things
+		that are in vehicle, but it gets better than that actually.
+	*/
+
+	Vehicle Vehicle
+}
+
+func (v Vehicle) showDetails(){
+	fmt.Println("Number of passangers:", v.NumberOfPassangers)
+	fmt.Println("Number of wheels:", v.NumberOfWheels)
+}
+
+func (c Car) show(){
+	fmt.Println("Make:", c.Make)
+	fmt.Println("Model:", c.Model)
+	fmt.Println("Year:", c.Year)
+	fmt.Println("IsElectric:", c.IsElectric)
+	fmt.Println("IsHybrid:", c.IsHybrid)
+
+	/*
+		And then I'll call the function that's available to me from the vehicle type because the vehicle type is embedded in the car type.
+	*/
+	c.Vehicle.showDetails()
+}
+
+func main() {
+
+	suv := Vehicle{
+		NumberOfWheels: 4,
+		NumberOfPassangers: 6,
+	}
+
+	volvoXC90 := Car{
+		Make: "Volvo",
+		Model: "XC90 T8",
+		Year: 2021,
+		IsElectric: false,
+		IsHybrid: true,
+		/*
+			And the vehicle will be the type I defined just a moment ago the variable I find just a moment ago suv which is of type vehicle.
+		*/
+		Vehicle: suv,
+	}
+
+	volvoXC90.show()
+
+	fmt.Println()
+
+	teslaModelX := Car{
+		Make: "Tesla",
+		Model: "Model X",
+		Year: 2021,
+		IsElectric: true,
+		IsHybrid: false,
+		/*
+			And the vehicle will be the type I defined just a moment ago the variable I find just a moment ago suv which is of type vehicle.
+		*/
+		Vehicle: suv,
+	}
+
+	/* 
+		Change from 6 to 7 passangers
+	*/
+
+	teslaModelX.Vehicle.NumberOfPassangers = 7
+
+	teslaModelX.show()
+
+}
