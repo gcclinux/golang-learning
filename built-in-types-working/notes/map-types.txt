@@ -5,6 +5,8 @@ import "fmt"
 //maps are keys and value
 //maps can not be sorted and random print out keys value.
 
+// Not quite. Remember that a maps's order is intentionally randomized by the Go compiler, so you can not depend on things appearing in the same order that they are added to the map.
+
 func main() {
 
 	intMap := make(map[string]int)

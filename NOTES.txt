@@ -131,7 +131,95 @@ $ Mac edit ~/.zshrc && source ~/.zshrc
 # Go is not OOP 
 # Example: car in OOP, car with Composition
 
+###### Chapter 4 summary ######
+
+Basic types - int, float32, float64, boolean string rune
+Aggredate types - arrays, structs
+Reference types - pointers, slices, maps, function, channels
+Interface types
+
+In order to implement an interfac, a type must implement all of the methods of that Interface
+
+Boolean expressions - false, num > 10, == / != / > / < / >= / <=
+
+Compound booleans - (x > 10) && ( y < 20)
+
+Composition - embedding types in types
+
+Exported vs Unexported - capitalization matters for:
+* packages level constants
+* package level variables
+* functions
+* types
+
+
+So we covered a fair bit of material in this section.
+And I'd like to just go over and summarize the key points that we made in each of the lessons.
+So we went through all of the types in go or not all of the types, but all of the important types
+And there are many more, but these are the ones you'll run into for the most part.
+So we covered basic types, which include ints, which can just hold whole numbers.
+There was also uint for unsigned integers 0 or greater;
+float 32 and float 64, which hold floating point numbers;
+the Boolean, which can just be true or false;
+strings, which are characters surrounded by either double quotes or the backticks;
+and the rune, which are individual characters used to make up strings.
+We also went through the aggregate types, including arrays which you don't use very often in go, but they do exist; and structs,
+which are types that we define ourselves.
+So a variable that can hold members, and it can hold members of any other type including other structs.
+We also looked at reference types, which include pointers, which begin with an asterisk to point to the memory address,
+and you dereference them by using the ampersand.
+We also looked at slices, which are sort of like arrays with a lot of additional functionality;
+maps, which are a key value data structure that allow you to store things by a key
+and get its value by looking it up by that key;
+functions, which we've seen many times; and channels, which are pipes used to connect one go routine
+to another go routine, so you can pass data back and forth.
+Then we looked at the interface type, and we also explored how you implement an interface.
+And in go, a type implements an interface simply by implementing all of the methods that the interface has.
+Then we spent some time looking at Boolean expressions. For example, false or num is greater than 10.
+And we looked at the Boolean operators the double equals sign, which is for equality,
+the exclamation mark equals, which means not equal to;
+greater than less than greater than equal to and less than and equal to.
+We also looked at compound Booleans, which we have an example right here, x is greater than 10 and y is less than 20
+or we could put x is greater than 10 or y is less than 20.
+And the double pipe the vertical bar is the or operator.
+We looked at composition one of go's most powerful features, where you can embed types in types and have access to
+the embedded types members and functions.
+And then finally, we looked at exported versus unexported, where capitalization matters for package level constants, package level variables,
+functions and types.
+And in the next section, we'll be moving on to look at the for loops and the various kinds of for loops we have in go
+as well as some additional decision structures.
+
+
+Section 5 - 47 Three Part Loop
+
+Execute one section of code a set number of times
+Execute one section of code based on a condition
+for loop in more details
+	* three componet loop
+	* while loop
+	* infinite loop
+	* for each range
+	* getting out of a loop
+
+But the Go authors decided to make things as simple as they possibly could.
+So, there was only one kind of loop in go - the for loop.
+Having said that, the for loop will actually do exactly the same thing that a do while, or a while loop does in other languages.
+So, we'll look at the three component loop.
+
+Making decisions
+
+if/then/else
+Switch
+
+Debugging
+
+using dlv, the go debugger
+setting break points
+stepping through our code
+
+
+
 ######################
 # AREK STOP AT 25
-# RICO START 44 exported vs Unexported
+# RICO START Section 5 - 47 Three Part Loop
 ######################
