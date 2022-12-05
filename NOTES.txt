@@ -133,5 +133,5 @@ $ Mac edit ~/.zshrc && source ~/.zshrc
 
 ######################
 # AREK STOP AT 25
-# RICO START 44 exorted vs Unexported
+# RICO START 44 exported vs Unexported
 ######################
