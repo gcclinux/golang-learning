@@ -1,0 +1,29 @@
+package main
+
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
+//  We want to write a for loop that will execute a block of code while some Boolean expression is true.
+
+func main(){
+
+// create random number by seeding it
+rand.Seed(time.Now().UnixNano())
+// execute a loop while a i > 100
+i := 1000
+
+for i > 100 {
+	// get a random number between 1 and 1001
+	i = rand.Intn(1000) +1
+	fmt.Println("i is", i)
+
+	if i > 100 {
+		fmt.Println("i is", i, "so loop keep going")
+	}	
+}
+
+fmt.Println("Got", i, "and broke out loop")
+}

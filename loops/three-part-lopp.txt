@@ -1,0 +1,28 @@
+package main
+
+import "fmt"
+
+func main() {
+	/*
+		// Infinite for loop example
+		for {
+
+		}
+
+		// map range loop example
+
+		for _ x := range myMap {
+
+		}
+	*/
+
+	// Three part loop / execute a set number of time.
+	for i := 10; i >= 0; i-- {
+		fmt.Println("i is", i)
+	}
+	fmt.Println()
+	// Three part loop
+	for i := 0; i <= 10; i++ {
+		fmt.Println("i is", i)
+	}
+}

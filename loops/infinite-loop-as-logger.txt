@@ -1,0 +1,32 @@
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"myapp/loops/mylogger"
+	"os"
+	"time"
+)
+
+func main() {
+	// Infinite loops read input from user 5 times and write it to a log
+
+	// Create reader variable
+	reader := bufio.NewReader(os.Stdin)
+
+	// Creating a channel 
+	ch := make(chan string)
+
+	// executre go routine and the infinite loop
+	go mylogger.ListenForLog(ch)
+
+	fmt.Println("Enter Something")
+
+	for i := 0; i < 5; i++ {
+		fmt.Print("-> ")
+		input, _ := reader.ReadString('\n')
+		ch <- input
+		time.Sleep(time.Second)
+	}
+
+}
