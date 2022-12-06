@@ -1,0 +1,17 @@
+For debugging to fully work the workspace needs to be the same as the 
+
+File --> Preferences --> Settings
+
+
+project_folder == ${workspaceFolder} == "terminal.integrated.cwd":
+
+-> I'm going to click over here on the left-hand side and click run and debug.
+-> And that will pop up this little dialogue on the left-hand side.
+-> And what I'm looking at or what I'm looking for is the ‘to customize Run and Debug
+-> create a launch.Jason file. So, I'm going to click that.
+-> And I'll choose go launch package. Okay.
+-> And if you click on the Explorer, you'll see a new folder called “.vscode”.
+
+ISSUE with VSC needs to run manually in command line before using it in VSC.
+
+% dlv debug --headless --listen=:23456 --api-version=2 "/Users/ricardowagemaker/Programming/GitServer/golang-learning/hammer-bitcoin/main.go"
