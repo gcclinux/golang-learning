@@ -14,4 +14,4 @@ project_folder == ${workspaceFolder} == "terminal.integrated.cwd":
 
 ISSUE with VSC needs to run manually in command line before using it in VSC.
 
-% dlv debug --headless --listen=:23456 --api-version=2 "/Users/ricardowagemaker/Programming/GitServer/golang-learning/hammer-bitcoin/main.go"
+% dlv debug --headless --listen=:23456 --api-version=2 "main.go"

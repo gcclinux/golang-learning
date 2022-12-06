@@ -221,5 +221,5 @@ stepping through our code
 
 ######################
 # AREK STOP AT 25
-# RICO START Section 5 - 50 Nested loops and the debugger
+# RICO START Section 5 - 54 Understanding more about Eliza
 ######################

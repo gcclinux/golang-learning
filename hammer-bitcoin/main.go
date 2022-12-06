@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"myapp/game"
+	"myapp/hammer-bitcoin/game"
 )
 
 func main() {
