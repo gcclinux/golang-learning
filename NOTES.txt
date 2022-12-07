@@ -217,9 +217,9 @@ using dlv, the go debugger
 setting break points
 stepping through our code
 
-
+-> Did not see the point of Section 5 - 54 Understanding more about Eliza
 
 ######################
 # AREK STOP AT 25
-# RICO START Section 5 - 54 Understanding more about Eliza
+# RICO START 
 ######################
