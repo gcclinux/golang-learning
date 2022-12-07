@@ -23,10 +23,10 @@ func main() {
 		userInput = strings.Replace(userInput, "\r\n", "", -1) //delete new line from string for windows -1 = everywhere
 		userInput = strings.Replace(userInput, "\n", "", -1)   //delete new line from string for none windows -1 = everywhere
 
+		fmt.Println(doctor.Response(userInput))
+
 		if userInput == "quit" {
 			break
-		} else {
-			fmt.Println(doctor.Response(userInput))
 		}
 	}
 }
