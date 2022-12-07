@@ -219,7 +219,13 @@ stepping through our code
 
 -> Did not see the point of Section 5 - 54 Understanding more about Eliza
 
+Section 60 - decisions
+
+if/else
+switch
+select
+
 ######################
 # AREK STOP AT 25
-# RICO START 
+# RICO START 61 If statement
 ######################

@@ -1,0 +1,23 @@
+package main
+
+import "fmt"
+
+func main() {
+	// Example 1 using nested loops
+	count := 1
+	for i := 0; i <= 100; i++ {
+		if i%7 == 0 {
+			fmt.Print(count, " -> ")
+			fmt.Println(i)
+			count++
+		}
+	}
+
+	// Example 2 / quicker and less processing / less code / easier to read
+	count2 := 1
+	for i :=0; i <= 100; i = i + 7{
+		fmt.Print(count2, " -> ")
+		fmt.Println(i)
+		count2++
+	}
+}

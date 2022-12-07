@@ -1,6 +1,6 @@
 package main
 
-// Provided idea and solution to 56. Solution to challange
+// Provided idea and solution to 58. The do while loop in go using the for loop
 
 import (
 	"fmt"
@@ -39,8 +39,8 @@ func main() {
 	fmt.Println("Q - Quit the program")
 
 	char := ' '
-	// Problem one fixed by adding &&  char != 'Q'
-	for char != 'q' && char != 'Q' {
+
+	for ok := true; ok; ok = char != 'q' && char != 'Q' {
 		char, _, err = keyboard.GetSingleKey()
 		if err != nil {
 			log.Fatal(err)
@@ -49,11 +49,6 @@ func main() {
 		i, _ := strconv.Atoi(string(char))
 
 		// if value char exist in the make it's ok and continue
-		_, ok := coffees[i]
-		if ok {
-			fmt.Printf("You chose %s\n", coffees[i])
-		}
-
 		// The same example, none are better than the other, is just which is easier to read and understand
 		if _, ok := coffees[i]; ok {
 			fmt.Printf("You chose %s\n", coffees[i])

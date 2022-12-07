@@ -1,0 +1,86 @@
+So, in this section, we covered a fair bit of material.
+
+We went over the fact that go, unlike other programming languages,
+
+only has one loop, the for loop.
+
+Other languages like Java C-sharp and so on
+
+have a for loop, a while loop, a do while, but go just has the for loop.
+
+But having said that, go's for loop can do everything that a while loop,
+
+a do while loop or a regular for loop can.
+
+It's just a slightly different syntax.
+
+And that was a decision made by the Go authors to keep this language
+
+as simple and compact as they possibly could.
+
+So, first we went through the three part for loop or the three component for loop.
+
+And that has an initializer, a condition, and then some kind of iterator.
+
+For example, for i as assigned the value of zero,
+
+so it starts at zero. ‘i’ is less than 10,
+
+that's our condition and i++, we increment the value of i
+
+by one every time we go through the loop.
+
+So, in that loop, we'll start counting at zero and we'll finish the loop
+
+as soon as ‘i’ is set to 10. And once it sets a 10, we immediately leave the loop
+
+and don't do anything inside of it.
+
+The while loop is even simpler ‘for some variable’
+
+is equal to some value or for and then a Boolean expression.
+
+And as long as that Boolean expression evaluates to true, the loop continues.
+
+And then we have the ever so simple infinite loop,
+
+the for, and that just continues forever until you jump
+
+out of the loop using a break statement, for example.
+
+We also had to look at delve, go’s debugger,
+
+and that helps us to focus upon our code and look at it in
+
+great detail, examining the value of variables and stepping through it
+
+one line at a time, if necessary.
+
+Then we had to look at the nested loops, loops that exist within loops.
+
+And we saw how to use a debugger with console applications
+
+by setting up that launch.Jason file and the tasks.Jason file.
+
+You should keep a copy of those around because you will need them if you write console
+
+applications in the future and want to use the debugger.
+
+We also explored Hammer Bitcoin and Eliza in a bit more detail
+
+and get some insight as to how that particular code works.
+
+And finally, we spent some time looking at what makes code better.
+
+And decided that well, it really depends what your criteria are.
+
+Do you want your code to be eminently readable?
+
+or do you want it to execute as quickly as you possibly can?
+
+So, better really depends upon the given situation.
+
+Alright. So, let's move on to the next section
+
+and explore some more flow control code.
+
