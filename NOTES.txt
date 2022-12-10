@@ -227,5 +227,5 @@ select
 
 ######################
 # AREK STOP AT 25
-# RICO START 61 If statement
+# RICO START 62 else statement
 ######################
