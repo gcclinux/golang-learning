@@ -23,7 +23,7 @@ func main() {
 	playerChoice := ""
 	playerValue := -1
 
-	computerValue := rand.Intn(2)
+	computerValue := rand.Intn(3)
 
 	reader := bufio.NewReader(os.Stdin)
 
@@ -31,6 +31,7 @@ func main() {
 
 	fmt.Print("Please enter rock, paper, or scissors -> ")
 	playerChoice, _ = reader.ReadString('\n')
+	playerChoice = strings.Replace(playerChoice, "\r", "", -1)
 	playerChoice = strings.Replace(playerChoice, "\n", "", -1)
 
 	// First option and way of doing...
