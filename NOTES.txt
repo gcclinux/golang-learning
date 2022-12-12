@@ -225,7 +225,10 @@ if/else
 switch
 select
 
+Usinhg the sprintf, which I don't think you've seen yet, this is actually a built-in function in the format package
+that doesn't print things to the screen. Instead, it returns a string,
+
 ######################
 # AREK STOP AT 25
-# RICO START Lesson 66
+# RICO START Lesson 70
 ######################
