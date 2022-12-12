@@ -227,5 +227,5 @@ select
 
 ######################
 # AREK STOP AT 25
-# RICO START Lesson 63
+# RICO START Lesson 65
 ######################
