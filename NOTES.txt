@@ -228,7 +228,16 @@ select
 Usinhg the sprintf, which I don't think you've seen yet, this is actually a built-in function in the format package
 that doesn't print things to the screen. Instead, it returns a string,
 
+--> Lesson 71 operator
+In go, as is the case in java and c-sharp and lots of other languages,we follow the normal order of operations, 
+which is to say do multiplication and division first then do addition and subtraction.
+
+--> Lesson 73 Precedence
+So parentheses first, then multiplication and division and then addition and subtraction.
+
+
+
 ######################
 # AREK STOP AT 25
-# RICO START Lesson 70
+# RICO START Lesson 74 Using the modulusoperator
 ######################
