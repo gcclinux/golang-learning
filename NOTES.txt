@@ -1,6 +1,6 @@
 # GOLANG-LEARNING #
 
-# Useful alias for pushing code easy on Linux or Mac
+# Useful alias for pushing code easy on Linux or Mac #
 
 alias ghpush='git add . && git commit -m "$(date)" && git branch -M main && git push -u origin main'
 
