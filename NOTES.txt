@@ -239,5 +239,5 @@ So parentheses first, then multiplication and division and then addition and sub
 
 ######################
 # AREK STOP AT 25
-# RICO START Lesson 75 Modules in rock-paper-scissors
+# RICO START Lesson 79 what is string
 ######################

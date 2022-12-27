@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"math"
 )
@@ -21,8 +22,8 @@ func main() {
 
 	fmt.Println()
 	// Integer division
-	half := 1 / 2
-	fmt.Println("Half with int division:", half)
+	// half := 1 / 2
+	// fmt.Println("Half with int division:", half)
 
 	halffloat := 1.0 / 2.0
 	fmt.Println("Halffloat with int division:", halffloat)
@@ -46,6 +47,10 @@ func main() {
 	x--
 	x--
 	fmt.Println("X is now,", x)
+	x *= 2
+	fmt.Println("X is now,", x)
+	x /= 2
+	fmt.Println("X is now,", x)
 
 	// Precedence
 	// Multiplications in precedence
@@ -56,8 +61,8 @@ func main() {
 	fmt.Println("Precedence a:", a, "b:", b, "c:", c)
 
 	// Integer Division NOT float
-	unclear := 12 * (3 / 4)
-	fmt.Println("Unclear:", unclear)
+	// unclear := 12 * (3 / 4)
+	// fmt.Println("Unclear:", unclear)
 
 	// Float Division NOT Integer
 	fmt.Println()
@@ -96,4 +101,64 @@ func main() {
 		fmt.Println("The month after", m, "is", m%12+1)
 	}
 
+	fmt.Println()
+	// relational an conditional operator
+
+	second := 31
+	minute := 1
+
+	// 1st = +, then < , andthen >,and then &&
+	if minute < 59 && second+1 > 59 {
+		minute++
+	}
+	fmt.Println("Minute: ", minute)
+
+	fmt.Println()
+	// Short Circuit evaluation
+
+	aa := 12
+	bb := 6
+
+	// Because if we look at the actual precedence of what's going on here, the (bb != 0) has the lowest precedence right now, so this will get evaluated first.
+	// Because the short circuit evaluation always goes from left to right.
+
+	if (bb != 0) && divideTwoNumbers(aa, bb) == 2 {
+		fmt.Println("We Found 2")
+	}
+
+	// another example using short circute in the function
+
+	cc, err := divideTwoNumberX(aa, bb)
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		if cc == 2 {
+			fmt.Println("We Found 2")
+		}
+	}
+
+	// QUIZ
+
+	q := (2+6)*2 - 1
+	fmt.Println("Q:", q)
+
+	i := 0
+	for {
+		i++
+		if i > 3 {
+			break
+		}
+		fmt.Println("i is", i)
+	}
+}
+
+func divideTwoNumbers(xy, xz int) int {
+	return xy / xz
+}
+
+func divideTwoNumberX(xy, xz int) (int, error) {
+	if xz == 0 {
+		return 0, errors.New("cannot divide by 0")
+	}
+	return xy / xz, nil
 }

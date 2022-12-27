@@ -66,13 +66,13 @@ func main() {
 		switch computerValue {
 		case ROCK:
 			fmt.Println("Computer chose ROCK")
-			break
+
 		case PAPER:
 			fmt.Println("Computer chose PAPER")
-			break
+
 		case SCISSORS:
 			fmt.Println("Computer chose SCISSORS")
-			break
+
 		default:
 		}
 
