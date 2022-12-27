@@ -239,5 +239,5 @@ So parentheses first, then multiplication and division and then addition and sub
 
 ######################
 # AREK STOP AT 25
-# RICO START Lesson 74 Using the modulusoperator
+# RICO START Lesson 74 Using the modulus operator
 ######################
