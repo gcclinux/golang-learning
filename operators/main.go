@@ -80,4 +80,20 @@ func main() {
 	z = 12 + (3 * 4)
 
 	fmt.Println("Precedence w:", w, "y:", y, "z:", z)
+
+	//does one number divide exactly into another?
+	fmt.Println()
+	xx := 12
+	yy := 3
+	if xx%yy == 0 {
+		fmt.Println(y, "divided exactly into, x")
+	} else {
+		fmt.Println(y, "Does not divided exactly into, x")
+	}
+	fmt.Println()
+
+	for m := 1; m <= 12; m++ {
+		fmt.Println("The month after", m, "is", m%12+1)
+	}
+
 }
