@@ -239,5 +239,5 @@ So parentheses first, then multiplication and division and then addition and sub
 
 ######################
 # AREK STOP AT 25
-# RICO START Lesson 81 String lenght
+# RICO START Lesson 83 String manipulation
 ######################
