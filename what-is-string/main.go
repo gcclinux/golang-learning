@@ -6,25 +6,31 @@ import (
 )
 
 func main() {
-	courses := []string{
-		"Learn Go for Beginners Crash Course",
-		"Learn Java for Beginners Crash Course",
-		"Learn PHP for Beginners Crash Course",
-		"Learn C for Beginners Crash Course",
+	// find and replace
+	newString := "Go is a great programming language. Good for it!"
+
+	if strings.Contains(newString, "Go") {
+		newString = strings.Replace(newString, "Go", "Golang", 1)
+		fmt.Println(newString)
+		newString = strings.ReplaceAll(newString, "Go", "Golang")
+		fmt.Println(newString)
 	}
 
-	for _, x := range courses {
-		if strings.Contains(x, "Go") {
-			fmt.Println("Go is found in", x, "and index is", strings.Index(x, "Go"))
-		}
+	// string comparison
+	a := "A"
+	if a == "A" {
+		fmt.Println("a is equals to A")
 	}
 
-	newString := "Go is a great programming language. Go for it!"
-	fmt.Println(strings.HasPrefix(newString, "Go"))
-	fmt.Println(strings.HasPrefix(newString, "PHP"))
-	fmt.Println(strings.HasSuffix(newString, "!"))
-	fmt.Println(strings.Count(newString, "Go"))
-	fmt.Println(strings.Count(newString, "Python"))
-	fmt.Println(strings.Index(newString, "Go"))
-	fmt.Println(strings.LastIndex(newString, "Go"))
+	if "A" > "B" {
+		fmt.Println("A is greater than B")
+	} else {
+		fmt.Println("A is NOT greater than B")
+	}
+
+	badEmail := " me@here.com "
+	badEmail = strings.TrimSpace(badEmail)
+
+	fmt.Printf("=%s=", badEmail)
+
 }
