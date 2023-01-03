@@ -1,0 +1,51 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+
+	//replace specific sring
+
+	str := "alpha alpha alpha alpha alpha"
+	str = replaceNth(str, "alpha", "beta", 3)
+
+	fmt.Println(str)
+
+}
+
+func replaceNth(s, old, new string, n int) string {
+	// index
+	i := 0
+
+	// So I'll say x which is just a variable I'm creating is this assign the value of strings.index and we're going to search from.
+	// And this is the one thing you haven't seen yet. We'll search s which is our string. In our case, it's alpha alpha alpha alpha alpha.
+	// And we're going to look from position I, which the first time through will have the value of 0 to the very end, which means I'm leaving the second part of that out.
+	// So I'm searching from the current index of I in the string s until the very end. And we're looking for old.
+	for j := 1; j <= n; j++ {
+		x := strings.Index(s[i:], old)
+		if x < 0 {
+			break
+		}
+
+		i = i + x
+		if j == n {
+			/*
+				I want you to return a string composed of the following things. Everything in the original string up to the current index,
+				so from the very beginning position 0 to the current index where I am which is the value of I. Then we want you to append the new the word we want to replace
+				to that string. And then we want to replace everything from position I plus the length of the old word up until the very end of the string,
+				and that will return it for us.
+
+				:i = from the beginning
+				i: = until the last character
+			*/
+			return s[:i] + new + s[i+len(old):]
+		}
+
+		i += len(old)
+	}
+
+	return s
+}

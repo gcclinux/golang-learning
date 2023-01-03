@@ -1,36 +1,5 @@
 package main
 
-import (
-	"fmt"
-	"strings"
-)
-
 func main() {
-	// find and replace
-	newString := "Go is a great programming language. Good for it!"
-
-	if strings.Contains(newString, "Go") {
-		newString = strings.Replace(newString, "Go", "Golang", 1)
-		fmt.Println(newString)
-		newString = strings.ReplaceAll(newString, "Go", "Golang")
-		fmt.Println(newString)
-	}
-
-	// string comparison
-	a := "A"
-	if a == "A" {
-		fmt.Println("a is equals to A")
-	}
-
-	if "A" > "B" {
-		fmt.Println("A is greater than B")
-	} else {
-		fmt.Println("A is NOT greater than B")
-	}
-
-	badEmail := " me@here.com "
-	badEmail = strings.TrimSpace(badEmail)
-
-	fmt.Printf("=%s=", badEmail)
-
+	
 }
